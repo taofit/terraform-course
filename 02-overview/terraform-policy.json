@@ -1,0 +1,43 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*",
+                "s3:*",
+                "iam:ListRoles",
+                "iam:ListPolicies",
+                "iam:ListInstanceProfiles",
+                "iam:GetRole",
+                "iam:GetPolicy",
+                "iam:GetPolicyVersion",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "iam:AddRoleToInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:PassRole",
+                "lambda:*",
+                "apigateway:*",
+                "cloudformation:*",
+                "logs:*",
+                "events:*",
+                "sns:*",
+                "sqs:*",
+                "dynamodb:*",
+                "rds:*",
+                "elasticloadbalancing:*",
+                "autoscaling:*",
+                "cloudwatch:*",
+                "route53:*",
+                "acm:*",
+                "kms:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
