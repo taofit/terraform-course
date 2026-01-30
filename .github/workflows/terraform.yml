@@ -2,9 +2,9 @@ name: "Terraform"
 
 on:
   # Uncomment to enable staging deploy from main
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   release:
     types: [published]
   pull_request:
@@ -77,9 +77,9 @@ jobs:
 
       - uses: actions/setup-go@v2
         with:
-          go-version: '^1.15.5'
-          
-      - name : Terratest Execution
+          go-version: "^1.15.5"
+
+      - name: Terratest Execution
         if: github.event_name == 'pull_request'
         working-directory: 08-testing/tests/terratest
         run: |
