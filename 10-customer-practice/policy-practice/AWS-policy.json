@@ -1,0 +1,50 @@
+{
+    "Statement": [
+        {
+            "Action": [
+                "s3:*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::devops-directive-tf-tao-state",
+                "arn:aws:s3:::devops-directive-tf-tao-state/*"
+            ],
+            "Sid": "S3BucketAccess"
+        },
+        {
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:dynamodb:us-east-1:335360747704:table/terraform-state-locking",
+            "Sid": "DynamoDBAccess"
+        },
+        {
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:logs:us-east-1:335360747704:log-group:/aws/lambda/my-lambda-function-tao:*",
+            "Sid": "CloudWatchLogs"
+        },
+        {
+            "Action": [
+                "route53:ChangeResourceRecordSets",
+                "route53:ListResourceRecordSets"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:route53:::hostedzone/*",
+            "Sid": "Route53Access"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": "arn:aws:iam::335360747704:policy/application-specific-policy"
+        }
+    ],
+    "Version": "2012-10-17"
+}
